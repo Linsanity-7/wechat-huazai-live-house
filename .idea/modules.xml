@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/idea-workspace.iml" filepath="$PROJECT_DIR$/.idea/idea-workspace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wechat-subscription-platform-common/wechat-subscription-platform-common.iml" filepath="$PROJECT_DIR$/wechat-subscription-platform-common/wechat-subscription-platform-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wechat-subscription-platform-controller/wechat-subscription-platform-controller.iml" filepath="$PROJECT_DIR$/wechat-subscription-platform-controller/wechat-subscription-platform-controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wechat-subscription-platform-interface/wechat-subscription-platform-interface.iml" filepath="$PROJECT_DIR$/wechat-subscription-platform-interface/wechat-subscription-platform-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wechat-subscription-platform-parent/wechat-subscription-platform-parent.iml" filepath="$PROJECT_DIR$/wechat-subscription-platform-parent/wechat-subscription-platform-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wechat-subscription-platform-pojo/wechat-subscription-platform-pojo.iml" filepath="$PROJECT_DIR$/wechat-subscription-platform-pojo/wechat-subscription-platform-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wechat-subscription-platform-service/wechat-subscription-platform-service.iml" filepath="$PROJECT_DIR$/wechat-subscription-platform-service/wechat-subscription-platform-service.iml" />
+    </modules>
+  </component>
+</project>

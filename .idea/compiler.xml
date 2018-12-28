@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="wechat-subscription-platform-common" />
+        <module name="wechat-subscription-platform-controller" />
+        <module name="wechat-subscription-platform-interface" />
+        <module name="wechat-subscription-platform-pojo" />
+        <module name="wechat-subscription-platform-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="wechat-subscription-platform-common" target="1.8" />
+      <module name="wechat-subscription-platform-controller" target="1.8" />
+      <module name="wechat-subscription-platform-interface" target="1.8" />
+      <module name="wechat-subscription-platform-parent" target="1.8" />
+      <module name="wechat-subscription-platform-pojo" target="1.8" />
+      <module name="wechat-subscription-platform-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="wechat-subscription-platform-common" options="-parameters" />
+      <module name="wechat-subscription-platform-controller" options="-parameters" />
+      <module name="wechat-subscription-platform-interface" options="-parameters" />
+      <module name="wechat-subscription-platform-pojo" options="-parameters" />
+      <module name="wechat-subscription-platform-service" options="-parameters" />
+    </option>
+  </component>
+</project>
