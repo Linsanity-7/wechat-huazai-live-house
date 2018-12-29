@@ -2,6 +2,7 @@ package com.huazai.livehouse.wechat.subscription.platform.service;
 
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @apiNote :核心服务类
@@ -14,5 +15,5 @@ public interface CoreService {
      * @param request
      * @return
      */
-    String processRequest(HttpServletRequest request);
+    String processRequest(HttpServletRequest request, HttpServletResponse response);
 }

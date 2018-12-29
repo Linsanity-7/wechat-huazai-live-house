@@ -1,12 +1,15 @@
 package com.huazai.livehouse.wechat.subscription.platform.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.huazai.livehouse.wechat.subscription.platform.common.util.WeChatSignUtil;
+import com.huazai.livehouse.wechat.subscription.platform.service.CoreService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -21,6 +24,8 @@ public class WeixinCoreController {
 
     private static Logger log = LoggerFactory.getLogger(WeixinCoreController.class);
 
+    @Reference(version = "1.0.0",timeout = 6000,interfaceClass = CoreService.class)
+    private CoreService coreService;
     /**
      * 验证请求是否来自微信服务器
      * @param request 请求的HttpServletRequest对象

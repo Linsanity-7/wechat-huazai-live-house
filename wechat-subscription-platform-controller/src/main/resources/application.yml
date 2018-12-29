@@ -1,5 +1,12 @@
-wechat:
-  token: "WeChat"
-
 server:
   port: 8050
+
+spring:
+  dubbo:
+    application:
+      name: iaa-party-manager-web
+    registry:
+      address: zookeeper://localhost:2181
+    scan: com.huazai.livehouse.wechat.subscription.platform
+  thymeleaf:
+    cache: false
