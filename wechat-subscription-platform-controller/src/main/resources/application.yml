@@ -1,0 +1,5 @@
+wechat:
+  token: "WeChat"
+
+server:
+  port: 8050
