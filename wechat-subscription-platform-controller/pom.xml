@@ -41,6 +41,12 @@
             <groupId>com.huazai.livehouse</groupId>
             <artifactId>wechat-subscription-platform-common</artifactId>
             <version>${project.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-web</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!--dubbo相关依赖-->
         <dependency>
