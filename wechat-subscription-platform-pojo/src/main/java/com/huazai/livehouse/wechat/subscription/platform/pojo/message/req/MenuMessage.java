@@ -1,6 +1,5 @@
 package com.huazai.livehouse.wechat.subscription.platform.pojo.message.req;
 
-import java.io.Serializable;
 
 /**
  * 上海美市科技有限公司开发部
@@ -8,15 +7,15 @@ import java.io.Serializable;
  * @author        :林尚华
  * @date    : 2018/12/29 14:15
  */
-public class MenuMessage extends BaseMessage implements Serializable {
+public class MenuMessage extends BaseMessage {
 
-    private String eventKey;
+    private String EventKey;
 
     public String getEventKey() {
-        return eventKey;
+        return EventKey;
     }
 
     public void setEventKey(String eventKey) {
-        this.eventKey = eventKey;
+        EventKey = eventKey;
     }
 }

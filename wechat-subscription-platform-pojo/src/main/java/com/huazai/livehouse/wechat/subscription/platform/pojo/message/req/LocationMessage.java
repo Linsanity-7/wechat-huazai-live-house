@@ -1,59 +1,58 @@
 package com.huazai.livehouse.wechat.subscription.platform.pojo.message.req;
 
-import java.io.Serializable;
 
 /**
  * @apiNote : 地理位置消息
  * @author        :林尚华
  * @date    : 2018/12/29 14:11
  */
-public class LocationMessage extends BaseMessage implements Serializable {
+public class LocationMessage extends BaseMessage{
     /**
      * 纬度
      */
-    private String locationX;
+    private String Location_X;
     /**
      * 经度
      */
-    private String locationY;
+    private String Location_Y;
     /**
      * 地图缩放大小
      */
-    private String scale;
+    private String Scale;
     /**
      * 地理位置信息
      */
-    private String label;
+    private String Label;
 
-    public String getLabel() {
-        return label;
+    public String getLocation_X() {
+        return Location_X;
     }
 
-    public void setLabel(String label) {
-        this.label = label;
+    public void setLocation_X(String location_X) {
+        Location_X = location_X;
     }
 
-    public String getLocationX() {
-        return locationX;
+    public String getLocation_Y() {
+        return Location_Y;
     }
 
-    public void setLocationX(String locationX) {
-        this.locationX = locationX;
-    }
-
-    public String getLocationY() {
-        return locationY;
-    }
-
-    public void setLocationY(String locationY) {
-        this.locationY = locationY;
+    public void setLocation_Y(String location_Y) {
+        Location_Y = location_Y;
     }
 
     public String getScale() {
-        return scale;
+        return Scale;
     }
 
     public void setScale(String scale) {
-        this.scale = scale;
+        Scale = scale;
+    }
+
+    public String getLabel() {
+        return Label;
+    }
+
+    public void setLabel(String label) {
+        Label = label;
     }
 }

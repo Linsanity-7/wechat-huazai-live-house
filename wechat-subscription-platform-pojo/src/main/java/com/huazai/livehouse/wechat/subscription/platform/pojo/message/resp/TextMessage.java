@@ -1,5 +1,7 @@
 package com.huazai.livehouse.wechat.subscription.platform.pojo.message.resp;
 
+import java.io.Serializable;
+
 /**
  * 上海美市科技有限公司开发部
  *
@@ -7,17 +9,17 @@ package com.huazai.livehouse.wechat.subscription.platform.pojo.message.resp;
  * @date    : 2018/12/29 15:31
  * @Description:
  */
-public class TextMessage extends BaseMessage{
+public class TextMessage extends BaseMessage implements Serializable{
     /**
      * 回复的消息内容
      */
-    private String content;
+    private String Content;
 
     public String getContent() {
-        return content;
+        return Content;
     }
 
     public void setContent(String content) {
-        this.content = content;
+        Content = content;
     }
 }

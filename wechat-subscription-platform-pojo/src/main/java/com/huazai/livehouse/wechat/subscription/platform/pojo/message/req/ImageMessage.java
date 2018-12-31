@@ -1,23 +1,22 @@
 package com.huazai.livehouse.wechat.subscription.platform.pojo.message.req;
 
-import java.io.Serializable;
 
 /**
  * @apiNote :图片消息
  * @author        :林尚华
  * @date    : 2018/12/29 14:07
  */
-public class ImageMessage extends BaseMessage implements Serializable {
+public class ImageMessage extends BaseMessage{
     /**
      * 图片链接
      */
-    private String picUrl;
+    private String PicUrl;
 
     public String getPicUrl() {
-        return picUrl;
+        return PicUrl;
     }
 
     public void setPicUrl(String picUrl) {
-        this.picUrl = picUrl;
+        PicUrl = picUrl;
     }
 }

@@ -11,62 +11,62 @@ public class BaseMessage implements Serializable {
     /**
      * 开发者账号
      */
-    private String developerAccount;
+    private String ToUserName;
 
     /**
      * 发送方账号
      */
-    private String sendAccount;
+    private String FromUserName;
     /**
      * 消息创建时间戳
      */
-    private long createTime;
+    private long CreateTime;
     /**
      * 消息类型
      */
-    private String msgType;
+    private String MsgType;
     /**
      * 消息id，64位整型数
      */
-    private long msgId;
+    private long MsgId;
 
-    public String getDeveloperAccount() {
-        return developerAccount;
+    public String getToUserName() {
+        return ToUserName;
     }
 
-    public void setDeveloperAccount(String developerAccount) {
-        this.developerAccount = developerAccount;
+    public void setToUserName(String toUserName) {
+        ToUserName = toUserName;
     }
 
-    public String getSendAccount() {
-        return sendAccount;
+    public String getFromUserName() {
+        return FromUserName;
     }
 
-    public void setSendAccount(String sendAccount) {
-        this.sendAccount = sendAccount;
+    public void setFromUserName(String fromUserName) {
+        FromUserName = fromUserName;
     }
 
     public long getCreateTime() {
-        return createTime;
+        return CreateTime;
     }
 
     public void setCreateTime(long createTime) {
-        this.createTime = createTime;
+        CreateTime = createTime;
     }
 
     public String getMsgType() {
-        return msgType;
+        return MsgType;
     }
 
     public void setMsgType(String msgType) {
-        this.msgType = msgType;
+        MsgType = msgType;
     }
 
     public long getMsgId() {
-        return msgId;
+        return MsgId;
     }
 
     public void setMsgId(long msgId) {
-        this.msgId = msgId;
+        MsgId = msgId;
     }
 }

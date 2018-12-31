@@ -1,5 +1,7 @@
 package com.huazai.livehouse.wechat.subscription.platform.pojo.message.resp;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
 import java.io.Serializable;
 
 /**
@@ -7,65 +9,65 @@ import java.io.Serializable;
  * @author        :林尚华
  * @date    : 2018/12/29 14:32
  */
-public class BaseMessage implements Serializable {
+public class BaseMessage implements Serializable{
     /**
      * 接收方账号(收到的OpenId)
      */
-    private String toUserName;
+    private String ToUserName;
     /**
      * 开发者微信号
      */
-    private String fromUserName;
+    private String FromUserName;
     /**
      * 消息创建时间戳
      */
-    private long createTime;
+    private long CreateTime;
     /**
      * 消息类型
      */
-    private String msgType;
+    private String MsgType;
     /**
      * 位0x0001被标志时，星标刚收到的消息
      */
-    private int funcFlag;
+    private int FuncFlag;
 
     public String getToUserName() {
-        return toUserName;
+        return ToUserName;
     }
 
     public void setToUserName(String toUserName) {
-        this.toUserName = toUserName;
+        ToUserName = toUserName;
     }
 
     public String getFromUserName() {
-        return fromUserName;
+        return FromUserName;
     }
 
     public void setFromUserName(String fromUserName) {
-        this.fromUserName = fromUserName;
+        FromUserName = fromUserName;
     }
 
     public long getCreateTime() {
-        return createTime;
+        return CreateTime;
     }
 
     public void setCreateTime(long createTime) {
-        this.createTime = createTime;
+        CreateTime = createTime;
     }
 
     public String getMsgType() {
-        return msgType;
+        return MsgType;
     }
 
     public void setMsgType(String msgType) {
-        this.msgType = msgType;
+        MsgType = msgType;
     }
 
     public int getFuncFlag() {
-        return funcFlag;
+        return FuncFlag;
     }
 
     public void setFuncFlag(int funcFlag) {
-        this.funcFlag = funcFlag;
+        FuncFlag = funcFlag;
     }
 }

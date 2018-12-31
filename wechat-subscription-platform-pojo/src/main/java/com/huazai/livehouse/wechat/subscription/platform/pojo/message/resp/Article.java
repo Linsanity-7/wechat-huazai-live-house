@@ -1,57 +1,59 @@
 package com.huazai.livehouse.wechat.subscription.platform.pojo.message.resp;
 
+import java.io.Serializable;
+
 /**
  * @apiNote 图文model
  * @author        :林尚华
  * @date    : 2018/12/29 14:28
  */
-public class Article {
+public class Article implements Serializable{
     /**
      * 标题
      */
-    private String title;
+    private String Title;
     /**
      * 描述
      */
-    private String description;
+    private String Description;
     /**
      * 图片链接
      */
-    private String picUrl;
+    private String PicUrl;
     /**
      * 点击图文消息跳转链接
      */
-    private String url;
+    private String Url;
 
     public String getTitle() {
-        return title;
+        return Title;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        Title = title;
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        Description = description;
     }
 
     public String getPicUrl() {
-        return picUrl;
+        return PicUrl;
     }
 
     public void setPicUrl(String picUrl) {
-        this.picUrl = picUrl;
+        PicUrl = picUrl;
     }
 
     public String getUrl() {
-        return url;
+        return Url;
     }
 
     public void setUrl(String url) {
-        this.url = url;
+        Url = url;
     }
 }

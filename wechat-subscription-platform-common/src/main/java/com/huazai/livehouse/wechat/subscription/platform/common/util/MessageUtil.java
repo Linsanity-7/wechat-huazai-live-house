@@ -1,7 +1,7 @@
 package com.huazai.livehouse.wechat.subscription.platform.common.util;
 
 import com.huazai.livehouse.wechat.subscription.platform.pojo.message.resp.Article;
-import com.huazai.livehouse.wechat.subscription.platform.pojo.message.resp.NewMessage;
+import com.huazai.livehouse.wechat.subscription.platform.pojo.message.resp.NewsMessage;
 import com.huazai.livehouse.wechat.subscription.platform.pojo.message.resp.TextMessage;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.core.util.QuickWriter;
@@ -116,6 +116,17 @@ public class MessageUtil {
         return map;
     }
 
+    public static String messageToXml(Object object){
+        if (object instanceof TextMessage){
+            TextMessage textMessage = (TextMessage) object;
+            return textMessageToXml(textMessage);
+        }else if (object instanceof  NewsMessage){
+            NewsMessage newsMessage = (NewsMessage) object;
+            return newsMessageToXml(newsMessage);
+        }
+        return "";
+    }
+
     /**
      * 文本消息对象转换成xml
      * @param textMessage 文本消息对象
@@ -131,7 +142,7 @@ public class MessageUtil {
      * @param newsMessage 图文消息对象
      * @return
      */
-    public static String newsMessageToXml(NewMessage newsMessage){
+    public static String newsMessageToXml(NewsMessage newsMessage){
         xStream.alias("xml", newsMessage.getClass());
         xStream.alias("item", new Article().getClass());
         return xStream.toXML(newsMessage);

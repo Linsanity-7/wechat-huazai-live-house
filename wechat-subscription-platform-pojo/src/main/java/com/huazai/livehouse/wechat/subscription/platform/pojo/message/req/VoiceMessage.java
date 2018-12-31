@@ -1,35 +1,34 @@
 package com.huazai.livehouse.wechat.subscription.platform.pojo.message.req;
 
-import java.io.Serializable;
 
 /**
  * @apiNote : 音频消息
  * @author        :林尚华
  * @date    : 2018/12/29 14:23
  */
-public class VoiceMessage extends BaseMessage implements Serializable {
+public class VoiceMessage extends BaseMessage{
     /**
      * 媒体id
      */
-    private String mediaId;
+    private String MediaId;
     /**
      * 语音格式
      */
-    private String format;
+    private String Format;
 
     public String getMediaId() {
-        return mediaId;
+        return MediaId;
     }
 
     public void setMediaId(String mediaId) {
-        this.mediaId = mediaId;
+        MediaId = mediaId;
     }
 
     public String getFormat() {
-        return format;
+        return Format;
     }
 
     public void setFormat(String format) {
-        this.format = format;
+        Format = format;
     }
 }

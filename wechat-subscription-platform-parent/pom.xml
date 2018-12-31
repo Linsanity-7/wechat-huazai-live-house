@@ -43,7 +43,7 @@
         <pageHelper.version>1.2.3</pageHelper.version>
         <yaml.version>1.19</yaml.version>
         <dom4j.version>1.6.1</dom4j.version>
-        <xstream.version>1.4.4</xstream.version>
+        <xstream.version>1.4.11</xstream.version>
     </properties>
 
     <dependencyManagement>

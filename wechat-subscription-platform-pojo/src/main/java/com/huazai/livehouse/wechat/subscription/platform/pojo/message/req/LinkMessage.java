@@ -1,47 +1,46 @@
 package com.huazai.livehouse.wechat.subscription.platform.pojo.message.req;
 
-import java.io.Serializable;
 
 /**
  * @apiNote :链接消息
  * @author        :林尚华
  * @date    : 2018/12/29 14:09
  */
-public class LinkMessage extends BaseMessage implements Serializable {
+public class LinkMessage extends BaseMessage{
     /**
      * 消息标题
      */
-    private String title;
+    private String Title;
     /**
      * 消息描述
      */
-    private String description;
+    private String Description;
     /**
      * 消息链接
      */
-    private String url;
+    private String Url;
 
     public String getTitle() {
-        return title;
+        return Title;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        Title = title;
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        Description = description;
     }
 
     public String getUrl() {
-        return url;
+        return Url;
     }
 
     public void setUrl(String url) {
-        this.url = url;
+        Url = url;
     }
 }
