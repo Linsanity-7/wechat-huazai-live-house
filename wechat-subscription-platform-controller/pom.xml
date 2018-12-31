@@ -90,7 +90,60 @@
         </dependency>
     </dependencies>
 
+    <!-- 定义环境 -->
+    <profiles>
+        <!-- 开发环境  -->
+        <profile>
+            <id>local</id>
+            <properties>
+                <!-- 定义profileActive属性 -->
+                <profileActive>local</profileActive>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <!-- 测试环境 -->
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profileActive>dev</profileActive>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>uat</id>
+            <properties>
+                <profileActive>uat</profileActive>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>demo</id>
+            <properties>
+                <profileActive>demo</profileActive>
+            </properties>
+        </profile>
+
+        <!-- 生产环境 -->
+        <profile>
+            <id>prod</id>
+            <properties>
+                <profileActive>prod</profileActive>
+            </properties>
+        </profile>
+    </profiles>
     <build>
+        <finalName>my-wechat-controller</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -98,5 +151,7 @@
             </plugin>
         </plugins>
     </build>
+
+
 
 </project>
