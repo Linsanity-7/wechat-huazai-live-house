@@ -35,14 +35,28 @@ public class ScheduledService {
 
     @Value("${wechat.url.get.access_token}")
     private String accessTokenUrl;
+    /**
+     * 计数
+     */
+    private Integer count = 0;
 
     /**
      * 定时更新画像内容
      * 定时任务，每天0点执行
      */
-    @Scheduled(cron = "${scheduled.timing.get.access_token}")
-    public void updatingThePortraits(){
+//    @Scheduled(cron = "${scheduled.timing.get.access_token}")
+    @Scheduled(cron = "${scheduled.timing.get.access_token.test}")
+    public void updatingAccessToken(){
         log.info("定时任务-------获取access_token执行，当前时间：{}", DateUtils.dateToStr(new Date(), "yyyy-MM-dd HH:mm:ss"));
+        if (count != 0){
+            try {
+                log.info("线程休眠50分钟");
+                Thread.sleep(3000000);
+            } catch (InterruptedException e) {
+                log.error("",e);
+            }
+        }
+        count = 1;
         log.info("url = {}，appid = {}，secret = {}",accessTokenUrl,appId,appSecret);
         AccessTokenRequest request = new AccessTokenRequest();
         request.setUrl(accessTokenUrl);

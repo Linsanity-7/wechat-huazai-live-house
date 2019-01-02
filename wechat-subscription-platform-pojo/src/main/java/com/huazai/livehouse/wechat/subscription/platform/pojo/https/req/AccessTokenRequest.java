@@ -37,6 +37,15 @@ public class AccessTokenRequest extends BaseHttpsRequest{
         this.secret = secret;
     }
 
+    public AccessTokenRequest(String url,String appId, String secret) {
+        this.appId = appId;
+        this.secret = secret;
+        this.url = url;
+    }
+
+    public AccessTokenRequest() {
+    }
+
     @Override
     public String toString() {
         return "AccessTokenRequest{" +

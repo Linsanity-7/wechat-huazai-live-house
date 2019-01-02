@@ -8,9 +8,9 @@ import java.io.Serializable;
  * @date    : 2019/01/02 17:31
  */
 public class BaseHttpsRequest implements Serializable {
-    private String url;
+    protected String url;
 
-    private String accessToken;
+    protected String accessToken;
 
     public String getUrl() {
         return url;
