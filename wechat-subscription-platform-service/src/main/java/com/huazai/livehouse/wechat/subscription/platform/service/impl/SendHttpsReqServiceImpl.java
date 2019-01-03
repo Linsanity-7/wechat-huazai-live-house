@@ -1,10 +1,15 @@
 package com.huazai.livehouse.wechat.subscription.platform.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.alibaba.fastjson.JSON;
 import com.huazai.livehouse.wechat.subscription.platform.common.util.GsonUtil;
 import com.huazai.livehouse.wechat.subscription.platform.factory.HttpsClientRequestFactory;
 import com.huazai.livehouse.wechat.subscription.platform.pojo.https.req.AccessTokenRequest;
+import com.huazai.livehouse.wechat.subscription.platform.pojo.https.resp.AccessTokenResp;
+import com.huazai.livehouse.wechat.subscription.platform.pojo.https.resp.HttpsResponseEntity;
 import com.huazai.livehouse.wechat.subscription.platform.service.SendHttpsReqService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -23,10 +28,12 @@ import java.util.List;
  * @date    : 2019/01/02 17:20
  */
 @Service(version ="1.0.0",interfaceClass = SendHttpsReqService.class,timeout = 60000)
-public class SendHttpsReqServiceImpl<T,E> implements SendHttpsReqService<T,E>{
+public class SendHttpsReqServiceImpl<E> implements SendHttpsReqService<E>{
+
+    private static Logger log = LoggerFactory.getLogger(SendHttpsReqServiceImpl.class);
 
     @Override
-    public T doGet(E e) {
+    public Object doGet(E e) {
         //获取rest客户端实例
         RestTemplate restTemplate = new RestTemplate(new HttpsClientRequestFactory());
         //解决（响应数据可能）中文乱码的问题
@@ -46,12 +53,15 @@ public class SendHttpsReqServiceImpl<T,E> implements SendHttpsReqService<T,E>{
         //请求体的类型任选即可；只要保证请求体的类型与HttpEntity的泛型保持一致即可
         String httpBody = null;
         HttpEntity<String> httpEntity = new HttpEntity<>(httpBody, httpHeaders);
+        int status = 0;
         if (e instanceof AccessTokenRequest){
            URI uri = getAccessTokenUrl((AccessTokenRequest)e);
             ResponseEntity<String> response = restTemplate.exchange(uri, HttpMethod.GET,httpEntity,String.class);
-            System.out.println("获取到的状态码：" + response.getStatusCodeValue());
+            log.info("获取到的状态码：{}" ,response.getStatusCodeValue());
+            status = response.getStatusCodeValue();
             if (response.hasBody()){
-                System.out.println("获取到的响应体为：" + response.getBody());
+                log.info("获取到的响应体为：",response.getBody());
+                return response;
             }
         }
         return null;
