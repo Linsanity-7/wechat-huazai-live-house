@@ -4,6 +4,7 @@ import com.huazai.livehouse.wechat.subscription.platform.service.RedisService;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.Collection;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -18,6 +19,7 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class RedisServiceImpl implements RedisService {
 
+    @Resource
     private RedisTemplate<String, Object> redisTemplate;
 
     @Override

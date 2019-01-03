@@ -55,12 +55,12 @@ public class SendHttpsReqServiceImpl<E> implements SendHttpsReqService<E>{
         HttpEntity<String> httpEntity = new HttpEntity<>(httpBody, httpHeaders);
         int status = 0;
         if (e instanceof AccessTokenRequest){
-           URI uri = getAccessTokenUrl((AccessTokenRequest)e);
+            URI uri = getAccessTokenUrl((AccessTokenRequest)e);
             ResponseEntity<String> response = restTemplate.exchange(uri, HttpMethod.GET,httpEntity,String.class);
             log.info("获取到的状态码：{}" ,response.getStatusCodeValue());
             status = response.getStatusCodeValue();
             if (response.hasBody()){
-                log.info("获取到的响应体为：",response.getBody());
+                log.info("获取到的响应体为：{}",response.getBody());
                 return response;
             }
         }
