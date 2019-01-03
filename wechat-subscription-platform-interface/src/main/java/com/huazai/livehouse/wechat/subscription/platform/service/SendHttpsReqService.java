@@ -5,11 +5,11 @@ package com.huazai.livehouse.wechat.subscription.platform.service;
  * @author        :林尚华
  * @date    : 2019/01/02 16:46
  */
-public interface SendHttpsReqService<T,E> {
+public interface SendHttpsReqService<E> {
     /**
      * 发送https的GET请求
      * @param e 请求对象
      * @return
      */
-    T doGet(E e);
+    Object doGet(E e);
 }
