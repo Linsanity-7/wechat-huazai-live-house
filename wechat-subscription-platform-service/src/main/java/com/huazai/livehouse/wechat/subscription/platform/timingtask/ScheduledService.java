@@ -19,7 +19,7 @@ import java.util.Date;
  * @date     : 2018/12/27 17:05
  * 定时任务类
  */
-@Service
+//@Service
 public class ScheduledService {
 
     private static Logger log = LoggerFactory.getLogger(ScheduledService.class);

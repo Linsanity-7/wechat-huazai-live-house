@@ -1,7 +1,9 @@
 package com.huazai.livehouse.wechat.subscription.platform;
 
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.huazai.livehouse.wechat.subscription.platform.pojo.https.req.AccessTokenRequest;
 import com.huazai.livehouse.wechat.subscription.platform.service.SendHttpsReqService;
+import com.huazai.livehouse.wechat.subscription.platform.thread.UpdateAccessTokenThread;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -9,6 +11,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.concurrent.*;
 
 /**
  * Springboot 启动后执行
@@ -20,21 +25,21 @@ public class ApplicationStartup implements ApplicationListener<ContextRefreshedE
 
     private static Logger log = LoggerFactory.getLogger(ApplicationStartup.class);
 
-    @Value("${appId}")
-    private String appId;
-
-    @Value("${appSecret}")
-    private String appSecret;
-
-    @Value("${wechat.url.get.access_token}")
-    private String accessTokenUrl;
+    @Resource
+    private UpdateAccessTokenThread updateAccessTokenThread;
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
         ApplicationContext context = contextRefreshedEvent.getApplicationContext();
-        log.info("Springboot启动完毕！执行获取access_token，参数appId={}，appSecret={},url={}",appId,appSecret,accessTokenUrl);
-        SendHttpsReqService sendHttpsReqService = context.getBean(SendHttpsReqService.class);
-        AccessTokenRequest request = new AccessTokenRequest(accessTokenUrl,appId,appSecret);
-        sendHttpsReqService.doGet(request);
+        //创建线程池，将更新AccessToken的方法放入线程池中执行
+        ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("updateAccessToken-pool-%d").build();
+        ExecutorService singleThreadPool = new ThreadPoolExecutor(
+                1,1,0L,
+                TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<>(1024),
+                threadFactory,
+                new ThreadPoolExecutor.AbortPolicy()
+        );
+        singleThreadPool.execute(updateAccessTokenThread);
     }
 }

@@ -44,6 +44,7 @@
         <yaml.version>1.19</yaml.version>
         <dom4j.version>1.6.1</dom4j.version>
         <xstream.version>1.4.11</xstream.version>
+        <guava.version>20.0</guava.version>
     </properties>
 
     <dependencyManagement>
@@ -89,6 +90,11 @@
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pageHelper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
             <!-- fastjson -->
             <dependency>
