@@ -53,12 +53,10 @@ public class SendHttpsReqServiceImpl<E> implements SendHttpsReqService<E>{
         //请求体的类型任选即可；只要保证请求体的类型与HttpEntity的泛型保持一致即可
         String httpBody = null;
         HttpEntity<String> httpEntity = new HttpEntity<>(httpBody, httpHeaders);
-        int status = 0;
         if (e instanceof AccessTokenRequest){
             URI uri = getAccessTokenUrl((AccessTokenRequest)e);
             ResponseEntity<String> response = restTemplate.exchange(uri, HttpMethod.GET,httpEntity,String.class);
             log.info("获取到的状态码：{}" ,response.getStatusCodeValue());
-            status = response.getStatusCodeValue();
             if (response.hasBody()){
                 log.info("获取到的响应体为：{}",response.getBody());
                 return response;

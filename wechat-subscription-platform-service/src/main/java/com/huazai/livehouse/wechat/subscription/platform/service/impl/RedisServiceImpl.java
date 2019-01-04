@@ -73,12 +73,12 @@ public class RedisServiceImpl implements RedisService {
     }
 
     @Override
-    public void hashOperationsSeve(String hashKey, String key, Object object) {
+    public void seveHashOperations(String hashKey, String key, Object object) {
 
     }
 
     @Override
-    public void valueOperationsSave(String key, Object object) {
+    public void saveValueOperations(String key, Object object) {
         redisTemplate.opsForValue().set(key, object);
     }
 }

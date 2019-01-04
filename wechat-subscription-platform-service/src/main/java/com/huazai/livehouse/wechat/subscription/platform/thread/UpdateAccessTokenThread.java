@@ -55,7 +55,7 @@ public class UpdateAccessTokenThread implements Runnable{
             if (response.getStatusCodeValue() == 200){
                 AccessTokenResp resp = GsonUtil.json2Obj(response.getBody(),AccessTokenResp.class);
                 log.info("线程{}更新Access_token值为：{}",Thread.currentThread().getName(),resp.getAccess_token());
-                redisService.valueOperationsSave("access_token", resp.getAccess_token());
+                redisService.saveValueOperations("access_token", resp.getAccess_token());
             }
             try {
                 Thread.sleep(updateTime);
