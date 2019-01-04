@@ -81,4 +81,9 @@ public class RedisServiceImpl implements RedisService {
     public void saveValueOperations(String key, Object object) {
         redisTemplate.opsForValue().set(key, object);
     }
+
+    @Override
+    public Object getValueOperations(Object key) {
+        return redisTemplate.opsForValue().get(key);
+    }
 }

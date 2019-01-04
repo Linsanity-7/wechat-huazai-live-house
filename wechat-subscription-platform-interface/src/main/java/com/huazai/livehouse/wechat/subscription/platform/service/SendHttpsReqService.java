@@ -12,4 +12,11 @@ public interface SendHttpsReqService<E> {
      * @return
      */
     Object doGet(E e);
+
+    /**
+     * 发送https的POST请求
+     * @param e 请求对象
+     * @return
+     */
+    Object doPost(E e);
 }

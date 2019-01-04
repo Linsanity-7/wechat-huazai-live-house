@@ -1,8 +1,5 @@
 package com.huazai.livehouse.wechat.subscription.platform.service;
 
-import org.springframework.data.redis.core.HashOperations;
-import org.springframework.data.redis.core.RedisTemplate;
-
 import java.util.Collection;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -98,12 +95,19 @@ public interface RedisService {
      * @param object
      * @return
      */
-    void hashOperationsSeve(String hashKey, String key, Object object);
+    void seveHashOperations(String hashKey, String key, Object object);
 
     /**
-     * 对redis字符串类型数据操作
+     * 对redis字符串类型数据操作(储存)
      * @param key
      * @param object
      */
-    void valueOperationsSave(String key,Object object);
+    void saveValueOperations(String key,Object object);
+
+    /**
+     * 对redis字符串类型数据操作(获取)
+     * @param key 键
+     * @return
+     */
+    Object getValueOperations(Object key);
 }
