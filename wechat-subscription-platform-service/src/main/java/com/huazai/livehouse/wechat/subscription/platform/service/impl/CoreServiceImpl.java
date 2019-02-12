@@ -18,11 +18,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * 上海美市科技有限公司开发部
- *
  * @author        :林尚华
  * @date    : 2018/12/29 15:43
- * @Description:
  */
 @Service(version = "1.0.0",interfaceClass = CoreService.class,timeout = 6000)
 public class CoreServiceImpl implements CoreService {
@@ -76,7 +73,7 @@ public class CoreServiceImpl implements CoreService {
         TextMessage textMessage = new TextMessage();
         textMessage.setToUserName(fromUserName);
         textMessage.setFromUserName(toUserName);
-        textMessage.setCreateTime(new Date().getTime());
+        textMessage.setCreateTime(System.currentTimeMillis());
         textMessage.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_TEXT);
         textMessage.setFuncFlag(0);
         return textMessage;
@@ -93,7 +90,7 @@ public class CoreServiceImpl implements CoreService {
         NewsMessage newsMessage = new NewsMessage();
         newsMessage.setToUserName(fromUserName);
         newsMessage.setFromUserName(toUserName);
-        newsMessage.setCreateTime(new Date().getTime());
+        newsMessage.setCreateTime(System.currentTimeMillis());
         newsMessage.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_NEWS);
         newsMessage.setFuncFlag(0);
         return newsMessage;

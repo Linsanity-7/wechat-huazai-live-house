@@ -4,13 +4,11 @@ import com.huazai.livehouse.wechat.subscription.platform.common.util.DateUtils;
 import com.huazai.livehouse.wechat.subscription.platform.common.util.GsonUtil;
 import com.huazai.livehouse.wechat.subscription.platform.pojo.https.req.AccessTokenRequest;
 import com.huazai.livehouse.wechat.subscription.platform.pojo.https.resp.AccessTokenResp;
-import com.huazai.livehouse.wechat.subscription.platform.pojo.https.resp.HttpsResponseEntity;
 import com.huazai.livehouse.wechat.subscription.platform.service.RedisService;
 import com.huazai.livehouse.wechat.subscription.platform.service.SendHttpsReqService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 

@@ -95,7 +95,7 @@ public interface RedisService {
      * @param object
      * @return
      */
-    void seveHashOperations(String hashKey, String key, Object object);
+    void saveHashOperations(String hashKey, String key, Object object);
 
     /**
      * 对redis字符串类型数据操作(储存)

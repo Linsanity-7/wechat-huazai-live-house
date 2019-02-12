@@ -1,7 +1,9 @@
 package com.huazai.livehouse.wechat.subscription.platform.service.impl;
 
 import com.huazai.livehouse.wechat.subscription.platform.service.RedisService;
+import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -24,7 +26,7 @@ public class RedisServiceImpl implements RedisService {
 
     @Override
     public boolean existsKey(String key) {
-        return false;
+        return redisTemplate.hasKey(key);
     }
 
     @Override
@@ -39,22 +41,24 @@ public class RedisServiceImpl implements RedisService {
 
     @Override
     public void deleteKey(String key) {
-
+        redisTemplate.delete(key);
     }
 
     @Override
     public void deleteKey(String... keys) {
-
+        for (String key : keys){
+            redisTemplate.delete(key);
+        }
     }
 
     @Override
     public void deleteKey(Collection<String> keys) {
-
+        redisTemplate.delete(keys);
     }
 
     @Override
     public void expireKey(String key, long time, TimeUnit timeUnit) {
-
+        redisTemplate.expire(key, time, timeUnit);
     }
 
     @Override
@@ -64,7 +68,7 @@ public class RedisServiceImpl implements RedisService {
 
     @Override
     public long getKeyExpire(String key, TimeUnit timeUnit) {
-        return 0;
+        return redisTemplate.getExpire(key, timeUnit);
     }
 
     @Override
@@ -73,8 +77,8 @@ public class RedisServiceImpl implements RedisService {
     }
 
     @Override
-    public void seveHashOperations(String hashKey, String key, Object object) {
-
+    public void saveHashOperations(String hashKey, String key, Object object) {
+        redisTemplate.opsForHash().put(key,hashKey,object);
     }
 
     @Override

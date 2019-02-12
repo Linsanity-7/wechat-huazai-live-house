@@ -60,7 +60,7 @@ public class HttpsClientRequestFactory extends SimpleClientHttpRequestFactory {
 
         private final SSLSocketFactory delegate;
 
-        public MyCustomSSLSocketFactory(SSLSocketFactory delegate) {
+        private MyCustomSSLSocketFactory(SSLSocketFactory delegate) {
             this.delegate = delegate;
         }
 
